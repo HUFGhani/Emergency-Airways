@@ -1,0 +1,284 @@
+[
+  {
+    "name": "Emergency tracheostomy management",
+    "entrypoint": "2-step-1",
+    "steps": [
+      {
+        "id": "2-step-1",
+        "title": "Patent upper airway",
+        "content": "<strong>Call for airway expert help.<p/>Look, listen & feel at the mouth and the tracheostomy</strong><p/>A Mapleson C system (e.g. ‘Waters circuit’) may help assessment if available<p/> Use <strong>waveform capnography</strong> when available: exhaled carbon dioxide indicates a patent or partially patent airway",
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-2-yes"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-2-no"
+          }
+        ]
+      },
+      {
+        "id": "2-step-2-no",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-3"
+          }
+        ]
+      },
+      {
+        "id": "2-step-2-yes",
+        "content": "<strong>Apply high flow oxygen to <strong>BOTH</strong> the face and the tracheostomy",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-3"
+          }
+        ]
+      },
+      {
+        "id": "2-step-3",
+        "title": "Assess tracheostomy patency",
+        "content": "Remove <strong>speaking valve</strong> or <strong>cap</strong> (if present)<p/>Remove <strong>inner tube</strong> (if persent)<p/>Some inner tubes need re-inserting to connect to breathing circuits.",
+        "question": "Can you pass a suction catheter?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-3-final"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-4"
+          }
+        ]
+      },
+      {
+        "id": "2-step-3-final",
+        "title": "Assess tracheostomy patency",
+        "content": "<strong>The tracheostomy tube is patent</strong><p/>Perform tracheal suction<p/>Consider partial obstruction<p/>Ventilate (via tracheostomy) if not breathing<p/>Continue ABCDE assessment",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "2-step-4",
+        "title": "Assess tracheostomy patency",
+        "content": "Deflate the <strong>cuff</strong> (if present)<p/><strong>Look, listen & feel at the mouth and tracheostomy</strong><p/>Use waveform capnography or Mapleson C if available",
+        "question": "Is the patient stable or improving?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-4-final"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-5"
+          }
+        ]
+      },
+      {
+        "id": "2-step-4-final",
+        "title": "Assess tracheostomy patency",
+        "content": "<strong>Tracheostomy tube partially obstructed or displaced</strong><p/>Continue ABCDE assessment",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "2-step-5",
+        "content": "<strong>REMOVE THE TRACHEOSTOMY TUBE</strong><p/><b>Look, listen & feel at the mouth and the tracheostomy.</b> Ensure oxygen is re-applied to the face and stoma<p/>Use waveform capnography or Mapleson C if available",
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-5-final"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-6"
+          }
+        ]
+      },
+      {
+        "id": "2-step-5-final",
+        "content": "Continue ABCDE assessment",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "2-step-6",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-7"
+          }
+        ]
+      },
+      {
+        "id": "2-step-7",
+        "title": "Primary emergency oxygenation",
+        "content": "Standard <b>ORAL airway</b> manoeuvres<p/>Cover the stoma (swabs/hand). Use:<br/><ul><li>Bag-valve-mask</li><li>Oral or nasal airway adjuncts</li><li>Supraglottic airway device e.g. LMA</li></ul><p/><b>Tracheostomy STOMA</b> ventilation<br/>Paediatric face mask applied to stoma<br/>LMA applied to stoma<p/>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-7a"
+          }
+        ]
+      },
+      {
+        "id": "2-step-7a",
+        "title": "Secondary emergency oxygenation",
+        "content": "Attempt <b>ORAL intubation</b><br/><b>Prepare for difficult intubation</b><p/>Uncut tube, advanced beyond stoma</p>Attempt <b>intubation of STOMA</b><p/>Small tracheostomy tube/6.0 cuffed ETT<p/>Consider Aintree catheter and fibreoptic ‘scope/Bougie/Airway exchange catheter",
+        "question": null,
+        "options": []
+      }
+    ]
+  },
+  {
+    "name": "Emergency laryngectomy management",
+    "entrypoint": "1-step-1",
+    "steps": [
+      {
+        "id": "1-step-1",
+        "content": "<strong>Call for airway expert help.<p/>Look, listen & feel at the mouth and laryngectomy stoma</strong><p/>A Mapleson C system (e.g. ‘Waters circuit’) may help assessment if available Use <strong>waveform capnography</strong> whenever available: exhaled carbon dioxide indicates a patent or partially patent airway",
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-2-yes"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-2-no"
+          }
+        ]
+      },
+      {
+        "id": "1-step-2-no",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-3"
+          }
+        ]
+      },
+      {
+        "id": "1-step-2-yes",
+        "content": "<strong>Apply high flow oxygen to laryngectomy stoma</strong><p/>If any doubt whether a patient has a laryngectomy, apply oxygen to face also (Laryngectomy patients have an end stoma and <strong>cannot be oxygenated via the mouth or nose.</strong> Applying oxygen to the face and stoma is the default emergency action for all patients with a tracheostomy",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-3"
+          }
+        ]
+      },
+      {
+        "id": "1-step-3",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "Most laryngectomy stomas will <strong>NOT</strong> have a tube in situ<p/>Remove <strong>stoma cover</strong> (if present)<p/>Remove <strong>inner tube</strong> (if persent)<p/>Some inner tubes need re-inserting to connect to breathing circuits.  Do not remove a tracheoesophageal puncture (TEP) prosthesis<p/>Most laryngectomy stomas will NOT have a tube in situ.",
+        "question": "Can you pass a suction catheter?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-3-final"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-4"
+          }
+        ]
+      },
+      {
+        "id": "1-step-3-final",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "<strong>The laryngectomy stoma is patent</strong><p/>Perform tracheal suction<p/>Consider partial obstruction<p/>Ventilate via stoma if not breathing<p/>Continue ABCDE assessment",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "1-step-4",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "Deflate the <strong>cuff</strong> (if present)<p/><strong>Look, listen & feel at the laryngectomy stoma or tube</strong><p/>Use waveform capnography or Mapleson C if available",
+        "question": "Is the patient stable or improving?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-4-final"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-5"
+          }
+        ]
+      },
+      {
+        "id": "1-step-4-final",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "Continue ABCDE assessment",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "1-step-5",
+        "content": "<strong>REMOVE THE TUBE FROM THE LARYNGECTOMY STOMA if present</strong><p/><b>Look, listen & feel at the laryngectomy stoma.</b> Ensure oxygen is re-applied to stoma Use waveform capnography or Mapleson C if available",
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-5-final"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-6"
+          }
+        ]
+      },
+      {
+        "id": "1-step-5-final",
+        "content": "Continue ABCDE assessment",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "1-step-6",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-7"
+          }
+        ]
+      },
+      {
+        "id": "1-step-7",
+        "title": "Primary emergency oxygenation",
+        "content": "Laryngectomy stoma ventilation via either:<p/><ul><li>Paediatric face mask applied to stoma</li><li>LMA applied to stoma</li></ul>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-7a"
+          }
+        ]
+      },
+      {
+        "id": "1-step-7a",
+        "title": "Secondary emergency oxygenation",
+        "content": "Attempt <b>intubation of laryngectomy stoma</b><p/>Small tracheostomy tube/6.0 cuffed ETT<p/>Consider Aintree catheter and fibreoptic ‘scope/Bougie/Airway exchange catheter",
+        "question": null,
+        "options": []
+      }
+    ]
+  }
+]
+
