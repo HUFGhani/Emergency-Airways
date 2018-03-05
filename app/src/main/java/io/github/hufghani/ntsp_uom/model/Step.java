@@ -94,4 +94,9 @@ public class Step implements Serializable
         this.options = options;
     }
 
+
+    @Override
+    public String toString() {
+        return new StringBuilder().append("Step{").append("id='").append(id).append('\'').append(", title='").append(title).append('\'').append(", content='").append(content).append('\'').append(", question=").append(question).append(", options=").append(options).append('}').toString();
+    }
 }

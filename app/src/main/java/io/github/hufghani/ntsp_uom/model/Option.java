@@ -54,5 +54,9 @@ public class Option implements Serializable
         this.target = target;
     }
 
+    @Override
+    public String toString() {
+        return new StringBuilder().append("Option{").append("caption='").append(caption).append('\'').append(", target='").append(target).append('\'').append('}').toString();
+    }
 }
 

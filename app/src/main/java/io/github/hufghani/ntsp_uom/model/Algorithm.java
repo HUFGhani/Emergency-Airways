@@ -80,5 +80,9 @@ public class Algorithm implements Serializable
         return null;
     }
 
+    @Override
+    public String toString() {
+        return new StringBuilder().append("Algorithm{").append("name='").append(name).append('\'').append(", entrypoint='").append(entrypoint).append('\'').append(", steps=").append(steps).append('}').toString();
+    }
 }
 
