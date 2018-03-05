@@ -12,6 +12,7 @@ import io.github.hufghani.ntsp_uom.R;
 import io.github.hufghani.ntsp_uom.databinding.ActivityMainBinding;
 
 public class MainActivity extends Activity {
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class MainActivity extends Activity {
         //Remove notification bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        final ActivityMainBinding binding = DataBindingUtil.setContentView(
+        binding = DataBindingUtil.setContentView(
                 this, R.layout.activity_main);
 
         binding.btnemergencyAlgorithms.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,7 @@
 package io.github.hufghani.ntsp_uom.ui.fragment;
 
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.github.hufghani.ntsp_uom.R;
+import io.github.hufghani.ntsp_uom.databinding.AlogrithmStepBinding;
 import io.github.hufghani.ntsp_uom.model.Algorithm;
 
 /**
@@ -25,6 +27,7 @@ import io.github.hufghani.ntsp_uom.model.Algorithm;
 public class AlgorithmStepFragment extends Fragment {
     List<Algorithm> algorithms;
     private Gson gson;
+    private AlogrithmStepBinding binding;
 
 
     @Override
@@ -39,14 +42,12 @@ public class AlgorithmStepFragment extends Fragment {
 
         }
 
-
-
-
-
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.alogrithm_step, container, false);
-
+        binding = DataBindingUtil.inflate(
+                inflater, R.layout.alogrithm_step, container, false);
+        View view = binding.getRoot();
+        //here data must be an instance of the class MarsDataProvider
+        //binding.setMarsdata(data);
+        return view;
     }
 
     @Override

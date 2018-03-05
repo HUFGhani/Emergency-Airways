@@ -12,21 +12,22 @@ import io.github.hufghani.ntsp_uom.databinding.ActivityAlgorithmsBinding;
 
 public class AlgorithmsActivity extends Activity {
 
+    private ActivityAlgorithmsBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        final ActivityAlgorithmsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_algorithms);
-
-        // Check whether the activity is using the layout version with
-        // the fragment_container FrameLayout. If so, we must add the first fragment
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_algorithms);
 
             binding.btntracheostomyAlgorithm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //            // Create an instance of ExampleFragment
+                    Bundle b = new Bundle();
+                    b.putString("fullname", "fullname");
+
                     Intent myIntent = new Intent(AlgorithmsActivity.this,
                             AlgorithmActivity.class);
+                    myIntent.putExtras(b);
                     startActivity(myIntent);
 
                 }
