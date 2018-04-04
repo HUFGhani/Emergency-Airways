@@ -23,7 +23,9 @@ public class AlgorithmsActivity extends Activity {
                 @Override
                 public void onClick(View view) {
                     Bundle b = new Bundle();
-                    b.putString("fullname", "fullname");
+                    b.putString("ALGORITHM_NAME_KEY","Emergency tracheostomy management");
+                    b.putString("STEP_ID_KEY","2-step-1");
+
 
                     Intent myIntent = new Intent(AlgorithmsActivity.this,
                             AlgorithmActivity.class);
@@ -36,8 +38,14 @@ public class AlgorithmsActivity extends Activity {
             binding.btnlaryngectomyAlgorithm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Bundle b = new Bundle();
+                    b.putString("ALGORITHM_NAME_KEY","Emergency laryngectomy management");
+                    b.putString("STEP_ID_KEY","1-step-1");
+
+
                     Intent myIntent = new Intent(AlgorithmsActivity.this,
                             AlgorithmActivity.class);
+                    myIntent.putExtras(b);
                     startActivity(myIntent);
                 }
             });
