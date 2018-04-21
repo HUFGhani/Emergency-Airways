@@ -57,19 +57,18 @@ public void onCreate(Bundle savedInstanceState) {
 }
 
     public void replaceFragment(Fragment fragment, boolean addToBackStack) {
+
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
         if (addToBackStack) {
             fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
         }
-        fragmentTransaction.replace(binding.fragmentContainer.getId(), fragment).commit();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
 
     }
 
 
-    public void popFragment(Fragment fragment) {
-        getSupportFragmentManager().popBackStack();
-    }
 
     public void popAllFragmentsFromBackstack() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
