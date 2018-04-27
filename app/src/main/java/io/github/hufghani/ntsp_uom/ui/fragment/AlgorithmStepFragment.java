@@ -1,8 +1,8 @@
 package io.github.hufghani.ntsp_uom.ui.fragment;
 
+import android.app.Fragment;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -134,7 +134,7 @@ public class AlgorithmStepFragment extends Fragment {
 
         View.OnClickListener onOptionClicked = new View.OnClickListener() {
             public void onClick(View v) {
-                ((AlgorithmActivity) AlgorithmStepFragment.this.getActivity()).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, option.getTarget()), true);
+                ((AlgorithmActivity) AlgorithmStepFragment.this.getActivity()).replaceFragment(newInstance(algorithmName, option.getTarget()), true);
             }
         };
 
@@ -162,7 +162,7 @@ public class AlgorithmStepFragment extends Fragment {
 
     }
 
-    public static Fragment newInstance(String algorithmName, String stepId) {
+    public static AlgorithmStepFragment newInstance(String algorithmName, String stepId) {
         Bundle args = new Bundle();
         AlgorithmStepFragment algorithmStepFragment = new AlgorithmStepFragment();
         args.putString(ALGORITHM_NAME_KEY, algorithmName);
@@ -170,5 +170,6 @@ public class AlgorithmStepFragment extends Fragment {
         algorithmStepFragment.setArguments(args);
         return algorithmStepFragment;
     }
+
 
 }
