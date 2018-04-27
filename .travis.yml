@@ -22,7 +22,7 @@ before_install:
 - chmod +x gradlew
 - ./gradlew dependencies || true
 script:
-- "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
+- "./gradlew assembleDebug"
 after_success:
 - sh script/set_tags.sh
 branches:
