@@ -13,6 +13,9 @@ script:
 - "./gradlew clean build connectedAndroidTest -PdisablePreDex --stacktrace"
 after_success:
 - sh script/set_tags.sh
+branches:
+  only:
+  - master
 notifications:
   email: true
 deploy:
