@@ -20,9 +20,8 @@ android:
 #   - adb shell input keyevent 82 &
 before_install:
 - chmod +x gradlew
-- ./gradlew dependencies || true
 script:
-- "./gradlew assembleDebug"
+- ./gradlew clean build connectedCheck
 after_success:
 - sh script/set_tags.sh
 branches:
