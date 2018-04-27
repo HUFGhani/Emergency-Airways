@@ -3,8 +3,10 @@ language: android
 jdk: oraclejdk8
 android:
   components:
-  # - tools
-  # - platform-tools
+   - tools
+   - tools
+   - tools
+   - platform-tools
   - build-tools-27.0.3
   - android-27
   - extra-google-google_play_services
@@ -13,7 +15,7 @@ android:
 before_install:
 - chmod +x gradlew
 script:
-- ./gradlew clean build connectedCheck
+- ./gradlew clean build
 after_success:
 - sh script/set_tags.sh
 branches:
