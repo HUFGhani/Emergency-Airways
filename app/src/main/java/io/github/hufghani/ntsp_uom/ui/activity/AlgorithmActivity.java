@@ -1,11 +1,11 @@
 package io.github.hufghani.ntsp_uom.ui.activity;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 
 import java.util.List;
 
@@ -51,14 +51,14 @@ public void onCreate(Bundle savedInstanceState) {
 
         AlgorithmStepFragment firstFragment = new AlgorithmStepFragment();
         firstFragment.setArguments(bundle);
-        getSupportFragmentManager().beginTransaction()
+        getFragmentManager().beginTransaction()
                 .add(binding.fragmentContainer.getId(), firstFragment).commit();
     }
 }
 
-    public void replaceFragment(Fragment fragment, boolean addToBackStack) {
+    public void replaceFragment(AlgorithmStepFragment fragment, boolean addToBackStack) {
 
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
 
         if (addToBackStack) {
             fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
