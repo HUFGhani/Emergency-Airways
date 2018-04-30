@@ -1,8 +1,10 @@
 sudo: false
 language: android
-jdk: oraclejdk8
+jdk:
+  - oraclejdk8
 android:
   components:
+  - tools
   - platform-tools
   - build-tools-27.0.3
   - android-27
@@ -11,8 +13,8 @@ android:
   - extra-google-m2repository
 before_install:
 - chmod +x gradlew
-script:
-- ./gradlew clean build
+#script:
+#- ./gradlew clean build
 after_success:
 - sh script/set_tags.sh
 branches:
