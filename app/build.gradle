@@ -68,4 +68,5 @@ dependencies {
     implementation 'com.android.databinding:baseLibrary:3.1.2'
 
     implementation 'com.android.databinding:adapters:3.1.2'
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
 }
