@@ -26,8 +26,6 @@ import io.github.hufghani.ntsp_uom.model.Option;
 import io.github.hufghani.ntsp_uom.ui.activity.AlgorithmActivity;
 import io.github.hufghani.ntsp_uom.utils.HtmlTagHandler;
 
-import static io.github.hufghani.ntsp_uom.R.layout.alogrithm_step;
-
 /**
  * Created by hamzaghani on 26/03/2018.
  */
@@ -62,7 +60,7 @@ public class AlgorithmStepFragment extends Fragment {
 
 
 
-        return inflater.inflate( alogrithm_step, container, false);
+        return inflater.inflate( R.layout.alogrithm_step, container, false);
     }
 
 
