@@ -112,8 +112,8 @@ public class AlgorithmStepFragment extends Fragment {
                             binding.stepQuestion.setText(Html.fromHtml(String.valueOf(algorithms.get(i).getSteps().get(j).getQuestion()), null, new HtmlTagHandler()));
 
                         }
-                        binding.btnno.setVisibility(View.VISIBLE);
-                        binding.btyes.setVisibility(View.VISIBLE);
+                        binding.btnNo.setVisibility(View.VISIBLE);
+                        binding.btnYes.setVisibility(View.VISIBLE);
 
                         if (!algorithms.get(i).getSteps().get(j).getOptions().isEmpty()){
                             for (Object o : algorithms.get(i).getSteps().get(j).getOptions()) {
@@ -140,23 +140,23 @@ public class AlgorithmStepFragment extends Fragment {
 
         if (option.getCaption().equalsIgnoreCase(NO)) {
 //            this.optionNoButton.setBackgroundDrawable(getActivity().getResources().getDrawable(C0231R.drawable.ripple_button_red_curved));
-            binding.btnno.setVisibility(View.VISIBLE);
-            binding.btnno.setText(option.getCaption());
-            binding.btnno.setOnClickListener(onOptionClicked);
+            binding.btnNo.setVisibility(View.VISIBLE);
+            binding.btnNo.setText(option.getCaption());
+            binding.btnNo.setOnClickListener(onOptionClicked);
         } else if (option.getCaption().equalsIgnoreCase(YES)) {
 //        if (option.getCaption().equalsIgnoreCase(YES)) {
 //            this.optionYesButton.setBackgroundDrawable(getActivity().getResources().getDrawable(C0231R.drawable.ripple_button_green_curved));
 //        } else {
 //            this.optionYesButton.setBackgroundDrawable(getActivity().getResources().getDrawable(C0231R.drawable.ripple_button_blue_curved));
 //        }
-            binding.btyes.setVisibility(View.VISIBLE);
-            binding.btyes.setText(option.getCaption());
-            binding.btyes.setOnClickListener(onOptionClicked);
+            binding.btnYes.setVisibility(View.VISIBLE);
+            binding.btnYes.setText(option.getCaption());
+            binding.btnYes.setOnClickListener(onOptionClicked);
         } else {
-            binding.btyes.setVisibility(View.INVISIBLE);
-            binding.btnno.setVisibility(View.VISIBLE);
-            binding.btnno.setText(option.getCaption());
-            binding.btnno.setOnClickListener(onOptionClicked);
+            binding.btnYes.setVisibility(View.INVISIBLE);
+            binding.btnNo.setVisibility(View.VISIBLE);
+            binding.btnNo.setText(option.getCaption());
+            binding.btnNo.setOnClickListener(onOptionClicked);
         }
 
 
