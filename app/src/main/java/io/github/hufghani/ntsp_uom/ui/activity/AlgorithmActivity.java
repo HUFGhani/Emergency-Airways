@@ -2,16 +2,17 @@ package io.github.hufghani.ntsp_uom.ui.activity;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.widget.FrameLayout;
 
 import java.util.List;
 
-import io.github.hufghani.ntsp_uom.R;
-import io.github.hufghani.ntsp_uom.databinding.ActivityAlogrithmBinding;
 import io.github.hufghani.ntsp_uom.ui.fragment.AlgorithmStepFragment;
+
+import static io.github.hufghani.ntsp_uom.R.id.fragment_container;
+import static io.github.hufghani.ntsp_uom.R.layout.activity_alogrithm;
 
 
 /**
@@ -19,42 +20,35 @@ import io.github.hufghani.ntsp_uom.ui.fragment.AlgorithmStepFragment;
  */
 
 public class AlgorithmActivity extends FragmentActivity {
-    /** Called when the activity is first created. */
-
-
-    private ActivityAlogrithmBinding binding;
-    private String algorithmName;
-    private String stepId;
 
     @Override
-public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    binding = DataBindingUtil.setContentView(this, R.layout.activity_alogrithm);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(activity_alogrithm);
 
-    if (binding.fragmentContainer != null) {
+        FrameLayout fragmentContainer = findViewById(fragment_container);
 
-        if (savedInstanceState != null) {
-            return;
+        if (fragmentContainer != null) {
+
+            if (savedInstanceState != null) return;
+
+            Intent in = getIntent();
+            Bundle b = in.getExtras();
+
+            /* Called when the activity is first created. */
+            String algorithmName = b != null ? b.getString("ALGORITHM_NAME_KEY") : null;
+            String stepId = b != null ? b.getString("STEP_ID_KEY") : null;
+
+            Bundle bundle = new Bundle();
+            bundle.putString("ALGORITHM_NAME_KEY", algorithmName);
+            bundle.putString("STEP_ID_KEY", stepId);
+
+            AlgorithmStepFragment firstFragment = new AlgorithmStepFragment();
+            firstFragment.setArguments(bundle);
+            getFragmentManager().beginTransaction()
+                    .add(fragmentContainer.getId(), firstFragment).commit();
         }
-
-        Intent in = getIntent();
-        Bundle b = in.getExtras();
-
-
-        this.algorithmName = b.getString("ALGORITHM_NAME_KEY");
-        this.stepId = b.getString("STEP_ID_KEY");
-
-
-        Bundle bundle = new Bundle();
-        bundle.putString("ALGORITHM_NAME_KEY", this.algorithmName);
-        bundle.putString("STEP_ID_KEY", this.stepId);
-
-        AlgorithmStepFragment firstFragment = new AlgorithmStepFragment();
-        firstFragment.setArguments(bundle);
-        getFragmentManager().beginTransaction()
-                .add(binding.fragmentContainer.getId(), firstFragment).commit();
     }
-}
 
     public void replaceFragment(AlgorithmStepFragment fragment, boolean addToBackStack) {
 
@@ -63,17 +57,16 @@ public void onCreate(Bundle savedInstanceState) {
         if (addToBackStack) {
             fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
         }
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.replace(fragment_container, fragment);
         fragmentTransaction.commit();
 
     }
 
 
-
     public void popAllFragmentsFromBackstack() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         if (fragments != null) {
-            for (Fragment fragment : fragments) {
+            for (Fragment ignored : fragments) {
                 getSupportFragmentManager().popBackStack();
             }
         }

@@ -78,11 +78,11 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
 
 
-    implementation 'com.android.databinding:dataBinder:1.0-rc4'
-    annotationProcessor 'com.android.databinding:compiler:3.1.2'
-    implementation 'com.android.databinding:library:3.1.2'
-    implementation 'com.android.databinding:baseLibrary:3.1.2'
-
-    implementation 'com.android.databinding:adapters:3.1.2'
-    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+//    implementation 'com.android.databinding:dataBinder:1.0-rc4'
+//    annotationProcessor 'com.android.databinding:compiler:3.1.2'
+//    implementation 'com.android.databinding:library:3.1.2'
+//    implementation 'com.android.databinding:baseLibrary:3.1.2'
+//
+//    implementation 'com.android.databinding:adapters:3.1.2'
+//    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
 }
