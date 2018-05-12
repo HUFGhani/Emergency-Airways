@@ -9,10 +9,8 @@ import android.widget.FrameLayout;
 
 import java.util.List;
 
+import io.github.hufghani.ntsp_uom.R;
 import io.github.hufghani.ntsp_uom.ui.fragment.AlgorithmStepFragment;
-
-import static io.github.hufghani.ntsp_uom.R.id.fragment_container;
-import static io.github.hufghani.ntsp_uom.R.layout.activity_alogrithm;
 
 
 /**
@@ -24,9 +22,9 @@ public class AlgorithmActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_alogrithm);
+        setContentView(R.layout.activity_alogrithm);
 
-        FrameLayout fragmentContainer = findViewById(fragment_container);
+        FrameLayout fragmentContainer = findViewById(R.id.fragment_container);
 
         if (fragmentContainer != null) {
 
@@ -57,7 +55,7 @@ public class AlgorithmActivity extends FragmentActivity {
         if (addToBackStack) {
             fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
         }
-        fragmentTransaction.replace(fragment_container, fragment);
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 
     }

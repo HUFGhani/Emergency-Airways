@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
-import static io.github.hufghani.ntsp_uom.R.id.btnlaryngectomy_algorithm;
-import static io.github.hufghani.ntsp_uom.R.id.btntracheostomy_algorithm;
-import static io.github.hufghani.ntsp_uom.R.layout.activity_algorithms;
+import io.github.hufghani.ntsp_uom.R;
 
 public class AlgorithmsActivity extends Activity {
 
@@ -17,10 +15,10 @@ public class AlgorithmsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(activity_algorithms);
+        setContentView(R.layout.activity_algorithms);
 
-        Button btntracheostomyAlgorithm = findViewById(btntracheostomy_algorithm);
-        Button btnlaryngectomyAlgorithm = findViewById(btnlaryngectomy_algorithm);
+        Button btntracheostomyAlgorithm = findViewById(R.id.btntracheostomy_algorithm);
+        Button btnlaryngectomyAlgorithm = findViewById(R.id.btnlaryngectomy_algorithm);
 
             btntracheostomyAlgorithm.setOnClickListener((View view) -> {
                 Bundle b = new Bundle();

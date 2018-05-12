@@ -9,8 +9,6 @@ import android.widget.Button;
 
 import io.github.hufghani.ntsp_uom.R;
 
-import static io.github.hufghani.ntsp_uom.R.layout.activity_main;
-
 public class MainActivity extends Activity {
 
 
@@ -20,7 +18,7 @@ public class MainActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         //Remove notification bar
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(activity_main);
+        setContentView(R.layout.activity_main);
         Button btnemergencyAlgorithms = findViewById(R.id.btnemergency_algorithms);
 
         btnemergencyAlgorithms.setOnClickListener(view -> {
