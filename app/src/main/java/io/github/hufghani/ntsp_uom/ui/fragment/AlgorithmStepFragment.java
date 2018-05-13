@@ -132,11 +132,7 @@ public class AlgorithmStepFragment extends Fragment {
 
     private void configureOptionButton(final Option option) {
 
-        View.OnClickListener onOptionClicked = new View.OnClickListener() {
-            public void onClick(View v) {
-                ((AlgorithmActivity) AlgorithmStepFragment.this.getActivity()).replaceFragment(newInstance(algorithmName, option.getTarget()), true);
-            }
-        };
+        View.OnClickListener onOptionClicked = v -> ((AlgorithmActivity) AlgorithmStepFragment.this.getActivity()).replaceFragment(newInstance(algorithmName, option.getTarget()), true);
 
         if (option.getCaption().equalsIgnoreCase(NO)) {
 //            this.optionNoButton.setBackgroundDrawable(getActivity().getResources().getDrawable(C0231R.drawable.ripple_button_red_curved));
