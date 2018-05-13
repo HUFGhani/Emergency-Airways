@@ -19,17 +19,12 @@ import io.github.hufghani.ntsp_uom.ui.fragment.AlgorithmStepFragment;
  */
 
 public class AlgorithmActivity extends FragmentActivity {
-    /** Called when the activity is first created. */
-
-
-    private ActivityAlogrithmBinding binding;
-    private String algorithmName;
-    private String stepId;
 
     @Override
 public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    binding = DataBindingUtil.setContentView(this, R.layout.activity_alogrithm);
+        /* Called when the activity is first created. */
+        ActivityAlogrithmBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_alogrithm);
 
     if (binding.fragmentContainer != null) {
 
@@ -41,13 +36,13 @@ public void onCreate(Bundle savedInstanceState) {
         Bundle b = in.getExtras();
 
 
-        this.algorithmName = b.getString("ALGORITHM_NAME_KEY");
-        this.stepId = b.getString("STEP_ID_KEY");
+        String algorithmName = b != null ? b.getString("ALGORITHM_NAME_KEY") : null;
+        String stepId = b != null ? b.getString("STEP_ID_KEY") : null;
 
 
         Bundle bundle = new Bundle();
-        bundle.putString("ALGORITHM_NAME_KEY", this.algorithmName);
-        bundle.putString("STEP_ID_KEY", this.stepId);
+        bundle.putString("ALGORITHM_NAME_KEY", algorithmName);
+        bundle.putString("STEP_ID_KEY", stepId);
 
         AlgorithmStepFragment firstFragment = new AlgorithmStepFragment();
         firstFragment.setArguments(bundle);
