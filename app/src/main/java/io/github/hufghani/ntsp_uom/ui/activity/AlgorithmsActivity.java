@@ -43,4 +43,3 @@ public class AlgorithmsActivity extends Activity {
             });
     }
 }
-

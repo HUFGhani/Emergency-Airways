@@ -38,7 +38,7 @@ public class AlgorithmStepFragment extends Fragment {
     private static final String YES = "yes";
     private String algorithmName;
     private String stepId;
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(

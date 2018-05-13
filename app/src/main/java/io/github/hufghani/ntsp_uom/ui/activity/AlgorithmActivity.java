@@ -26,14 +26,14 @@ public void onCreate(Bundle savedInstanceState) {
         /* Called when the activity is first created. */
         ActivityAlogrithmBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_alogrithm);
 
-    if (binding.fragmentContainer != null) {
+        if (binding.fragmentContainer != null) {
 
-        if (savedInstanceState != null) {
-            return;
-        }
+            if (savedInstanceState != null) {
+                return;
+            }
 
-        Intent in = getIntent();
-        Bundle b = in.getExtras();
+            Intent in = getIntent();
+            Bundle b = in.getExtras();
 
 
         String algorithmName = b != null ? b.getString("ALGORITHM_NAME_KEY") : null;
@@ -44,12 +44,12 @@ public void onCreate(Bundle savedInstanceState) {
         bundle.putString("ALGORITHM_NAME_KEY", algorithmName);
         bundle.putString("STEP_ID_KEY", stepId);
 
-        AlgorithmStepFragment firstFragment = new AlgorithmStepFragment();
-        firstFragment.setArguments(bundle);
-        getFragmentManager().beginTransaction()
-                .add(binding.fragmentContainer.getId(), firstFragment).commit();
+            AlgorithmStepFragment firstFragment = new AlgorithmStepFragment();
+            firstFragment.setArguments(bundle);
+            getFragmentManager().beginTransaction()
+                    .add(binding.fragmentContainer.getId(), firstFragment).commit();
+        }
     }
-}
 
     public void replaceFragment(AlgorithmStepFragment fragment, boolean addToBackStack) {
 
