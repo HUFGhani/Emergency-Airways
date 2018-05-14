@@ -9,9 +9,9 @@
 	    git config --global user.email "travis@travis-ci.org"
 	    git config --global user.name "Travis"
 
-        version=$(<../script/versionTracker.txt)
+        version=$(<script/versionTracker.txt)
         echo "$version"
-        pastVersion=$(<../script/versionTracker.txt)
+        pastVersion=$(<script/versionTracker.txt)
         (( version++ ))
         echo "$version" > versionTracker.txt
 
