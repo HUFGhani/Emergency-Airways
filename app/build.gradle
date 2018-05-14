@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "io.github.hufghani.ntsp_uom"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -26,10 +26,10 @@ android {
             testCoverageEnabled true
         }
     }
-    dexOptions {
-        // Skip pre-dexing when running on Travis CI or when disabled via -Dpre-dex=false.
-        preDexLibraries = preDexEnabled && !travisBuild
-    }
+//    dexOptions {
+//        // Skip pre-dexing when running on Travis CI or when disabled via -Dpre-dex=false.
+//        preDexLibraries = preDexEnabled && !travisBuild
+//    }
 
     compileOptions {
         encoding "UTF-8"
@@ -46,18 +46,18 @@ android {
 
 ext.set("supportVersion", '27.1.0')
 //
-configurations.all {
-    resolutionStrategy {
-        eachDependency { details ->
-            // Force all of the primary support libraries to use the same version.
-            if (details.requested.group == 'com.android.support'
-                    && details.requested.name != 'multidex'
-                    && details.requested.name != 'multidex-instrumentation') {
-                details.useVersion supportVersion
-            }
-        }
-    }
-}
+//configurations.all {
+//    resolutionStrategy {
+//        eachDependency { details ->
+//            // Force all of the primary support libraries to use the same version.
+//            if (details.requested.group == 'com.android.support'
+//                    && details.requested.name != 'multidex'
+//                    && details.requested.name != 'multidex-instrumentation') {
+//                details.useVersion supportVersion
+//            }
+//        }
+//    }
+//}
 
 
 dependencies {
