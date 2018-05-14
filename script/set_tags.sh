@@ -23,7 +23,7 @@
 
 	    git add .
 	    git commit -m "update versionTracker.txt from ${pastVersion} to ${version} "
-	    git push
+	    git push origin HEAD:master
 
 
 	    echo -e "Done magic with tags.\n"
