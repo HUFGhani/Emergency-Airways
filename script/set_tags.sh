@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
-BRANCH="master"
+ BRANCH="master"
 
-if [ "$TRAVIS_BRANCH" = "$BRANCH" ]; then
-  if [ "$TRAVIS_PULL_REQUEST" = false ]; then
-  	if [ -z "$TRAVIS_TAG" ]; then
+ if [ "$TRAVIS_BRANCH" = "$BRANCH" ]; then
+   if [ "$TRAVIS_PULL_REQUEST" = false ]; then
+   	if [ -z "$TRAVIS_TAG" ]; then
 	    echo -e "Starting to tag commit.\n"
 
 	    git config --global user.email "travis@travis-ci.org"
 	    git config --global user.name "Travis"
 
-
-        version=$(<script/versionTracker.txt)
+        version=$(<../script/versionTracker.txt)
         echo "$version"
-        pastVersion = version
+        pastVersion=$(<../script/versionTracker.txt)
         (( version++ ))
         echo "$version" > versionTracker.txt
 
@@ -21,12 +20,13 @@ if [ "$TRAVIS_BRANCH" = "$BRANCH" ]; then
 	    git push origin --tags
 	    git fetch origin
 
-	    git add script/versionTracker.txt
+
+	    git add .
 	    git commit -m "update versionTracker.txt from ${pastVersion} to ${version} "
 	    git push
 
 
 	    echo -e "Done magic with tags.\n"
-	fi
-  fi
-fi
+ 	fi
+   fi
+ fi

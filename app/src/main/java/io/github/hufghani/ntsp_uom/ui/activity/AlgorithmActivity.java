@@ -23,7 +23,7 @@ public class AlgorithmActivity extends FragmentActivity {
     @Override
 public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-        /* Called when the activity is first created. */
+
         ActivityAlogrithmBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_alogrithm);
 
         if (binding.fragmentContainer != null) {
@@ -63,12 +63,10 @@ public void onCreate(Bundle savedInstanceState) {
 
     }
 
-
-
     public void popAllFragmentsFromBackstack() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         if (fragments != null) {
-            for (Fragment fragment : fragments) {
+            for (Fragment ignored : fragments) {
                 getSupportFragmentManager().popBackStack();
             }
         }
