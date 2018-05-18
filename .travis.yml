@@ -61,7 +61,12 @@ branches:
   only:
   - master
 notifications:
-  email: true
+  email:
+    on_success: always
+    on_failure: never
+    recipients:
+    - h.u.f.ghani@gmail.com
+    - antoniu.pop@manchester.ac.uk
 deploy:
   provider: releases
   api_key:
