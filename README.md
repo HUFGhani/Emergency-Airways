@@ -1,4 +1,4 @@
-# ntsp_uom
+# Emergency Airways
 [![Build Status](https://travis-ci.org/HUFGhani/ntsp_uom.svg?branch=master)](https://travis-ci.org/HUFGhani/ntsp_uom)
 
 This project will prototype and develop a life-saving app, aimed initially to enhance training for the management of critical airway emergencies and, later, to assist with early emergency response.
