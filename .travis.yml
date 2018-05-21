@@ -28,7 +28,7 @@ android:
   - extra-android-m2repository
   - extra-google-m2repository
   - extra
-  - addon-google_apis-google-19
+  - addon-google_apis-google-19 # google play services
   - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API
   - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API
   - google_apis/armeabi-v7a
@@ -70,7 +70,7 @@ notifications:
 deploy:
   provider: releases
   api_key:
-    secure: uMzM4x/RYO79uFuHm9PXiFNH6PZIkMm8O87xS/vLGeFNFOgYqRiSFnl4DnMjkGK+e/3YXY5O/W9QSmZyjTQZY6vJCN7N+Cbo6iITpQj2q+TaAUhUBHM88h+wPTWLNDmz3BzlFm7pu/ADECumedvo5vn4+Yp5+Dtdvv6DgwQpudWRZHkSYIcTV6nnGTX8MOdNXLM5Fultl00MaQo1ZJDUXjl+xvPkQtai+Y5UDSapTQpeZn3R+WkFtLT8pb3A7UZDc7iadMsP4vbFXqNar2tbpu9ZBhQ+K0IBwlUHYpri/SchEw66LZswiqaA7IrHzrNYoQq2GNGYzRREvmqdwxlSoi5cx2hT2IXlh2b7Fq8N04mzeXUWKFWrcQ9AQLM4SwJ1xlWpcpd019TrsQMYOUqSXnagK9SHRx1Otthk5iPY3bZ/Im+VJ0fLmC1qyW2CT6HSdG4vf3VRHbtx7DYZMjnM72vgH5IcLQaBah7soKPTvJMc5Dtgu39bXIEBz8ZeLtfTDehoai9BC6hWioCoqQJNXNqZSxRQ6CMaYppxzlUMDPqurtoFzJIrN41b+IIIeP7NqXaiPjD66QYzOGvykJPk/o4LvThRtOWs1/Ibiu5z6yTc1227K/ywARtXT1ATHhwjXftlPUCpjc2JsyuU4KrbK0bl5M0NXsKTI2VUzEyX9rY=
+    secure: v5F6XpaLP0Bbi3yz3T6i9/4uSOCY5Mzl4vbPwiyLJM86ZmJcOn+6J9R9AkkEviMXlfwDMzp1rREqhKy0TZikq1W/N3+BEXCk6hqdthygs1SANc9sjF+F9XItoEecXks6WqwCah7+qPjrJ4cLUZpmYJ1j0H5tkWUSKTxCC7HT70YJJBWhVKTr9OcId3vxnJowdlqugDNRBTBLlcaaPitw1cjPA9oj0NnDP1f8UXDsgcxqM86MNHR4lLNngANnCv/hM0RvWW0Y/IGZa1Xi49vMOE3x4RisIqxWAskz0wKTo00FNsY3WoC5RxOTcNf8QtwUt35D3O5cEgsYZRtf1wDwa3kSkNvcdonh1E4MemzAQeefOG5RclXglCoTKe+oN6CRj66KV2GdY7Z+6j5mSWN6+5aycggra404l/bQTHCwL/9mjZvwih2mKT7NNmukRbxS2D94zcBbE8rGwzqzgTgQvX+OidB55SWUBP1f+0Z5UoqMnYaRcifmzmwljNHYz6i0aa7uq9KBwoOzmh74vRYU10TJtOmlbtGsxouOYp8PVRw6UHmgoH4Y09IsdLLv7RJoirgPVSYewiubYt4ozRWWmWODh3LODTWQN0FUnXLChnzfC9HB5Cup4r6+S04jHRwDO4XXTO41XNw4krLQdWJNjIHYt4uPPYdfMi/Sxgzvnu4=
   file: app/build/outputs/apk/debug/Emergency-Airways.apk
   file_glob: 'true'
   skip_cleanup: true
