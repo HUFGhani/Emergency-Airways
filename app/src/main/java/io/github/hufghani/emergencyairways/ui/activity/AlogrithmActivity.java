@@ -15,6 +15,8 @@ public class AlogrithmActivity extends FragmentActivity {
 
     private final String ALGORITHM_NAME_KEY = "ALGORITHM_NAME_KEY";
     private final String STEP_ID_KEY = "STEP_ID_KEY";
+    private static final String TEXT_TO_SPEECH_KEY = "TEXT_TO_SPEECH_KEY";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class AlogrithmActivity extends FragmentActivity {
         Bundle bundle = new Bundle();
         bundle.putString(ALGORITHM_NAME_KEY, algorithmName);
         bundle.putString(STEP_ID_KEY, stepId);
+        bundle.putBoolean(TEXT_TO_SPEECH_KEY,false);
 
         AlgorithmStepFragment firstFragment = new AlgorithmStepFragment();
         firstFragment.setArguments(bundle);
