@@ -71,6 +71,8 @@ notifications:
     - antoniu.pop@manchester.ac.uk
 deploy:
   provider: releases
+  api_key:
+    secure: okuaMMDjqug67eW91CluY6NsIcjcdErNew4iUdS0VAI3e5bBx3xQlyvlpt/+mBzpRPdGNdpRI3geCwgt9nPgjI7U9A8vl1losCDmRj5VumGDbEwU1T0QWjHCYI352TO8z33ChC7gibgslNooVOposAk+pBOG1j4fdyc8E9uUgTEMKt93cwj4VZw8JhwieJxstxufpUzQ9g1g8pt2puGvV51B0JsBvo+Ied8Mg5zJlDVvNu34aWPNwTvPKXxC26/Mqw0cFgpgxwGIkVZ8Yw9rCdRMzXierPXgM/0Y6r4hPCS0UkvrBzT2Lyxn3Qsc92/jopq8EVBAQiqom5btFa+sPr3Foe64LnMcDNhLpCeNb+ANWmwTxFVgYHdf0WgU53eEuGfbQ/wklYGFdXGoN0zq/nO259tbHxd0mULcEpCS5JAC271tRyISljazGqJDNiYc5k3vpBZ4nukoLchIpF7IT0ROyFAP/U5PRxOln1J2u8knGdD8p26DDzG9gKiqEH6g5NPqJcSM36ocK/rB1wfcvOKi2prEx1PUsiWo/6be7ZFYU8T5hEiDb2Em238IBH90td6g6i/Dxy6pR6GsIM49+nnjG/9coQhghFNf53UUaxItOIJeZnMBPjZQOiJ0TJ7S5C670H8Am2x9cnjce45K1LzZqxOEZ7SrQcFRclzaHNw=
   file: app/build/outputs/apk/debug/Emergency-Airways.apk
   file_glob: "true"
   skip_cleanup: true
