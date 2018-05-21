@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.AlgorithmStepFragment"
+    tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/activity_alogrithm">
 
 
@@ -65,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:enabled="false"
                 android:text="@string/back"
                 android:visibility="invisible" />
 
@@ -73,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:enabled="false"
                 android:text="@string/no"
                 android:visibility="invisible" />
 
@@ -81,9 +84,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:enabled="false"
                 android:text="@string/yes"
                 android:visibility="invisible" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="70" />
+
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/textToSpeach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@android:drawable/ic_lock_silent_mode"
+                android:visibility="invisible"
+                app:elevation="0dp" />
         </LinearLayout>
 
     </LinearLayout>
