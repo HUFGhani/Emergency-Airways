@@ -50,3 +50,8 @@ dependencies {
     implementation project(':pocketsphinx-android-5prealpha-release')
 
 }
+
+//add the assets.xml into apk
+ant.importBuild 'assets.xml'
+preBuild.dependsOn(list, checksum)
+clean.dependsOn(clean_assets)
