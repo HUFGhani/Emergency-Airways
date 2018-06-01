@@ -5,7 +5,7 @@ import android.speech.RecognitionListener;
 
 public interface GoogleRecognitionListener extends RecognitionListener {
 
-    String TAG = GoogleRecognitionListener.class.getSimpleName();
+
 
     @Override
     void onReadyForSpeech(Bundle params);

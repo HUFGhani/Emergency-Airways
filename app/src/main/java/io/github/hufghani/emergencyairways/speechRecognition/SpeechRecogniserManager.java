@@ -151,6 +151,8 @@ public class SpeechRecogniserManager {
 
         mGoogleSpeechRecognizer = android.speech.SpeechRecognizer.createSpeechRecognizer(mContext);
         mGoogleSpeechRecognizer.setRecognitionListener(new GoogleRecognitionListener() {
+
+            String TAG = GoogleRecognitionListener.class.getSimpleName();
             @Override
             public void onResults(Bundle results) {
                 if ((results != null) && results.containsKey(android.speech.SpeechRecognizer.RESULTS_RECOGNITION)) {

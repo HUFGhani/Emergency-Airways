@@ -13,8 +13,8 @@ import io.github.hufghani.emergencyairways.ui.fragment.AlgorithmStepFragment;
 
 public class AlogrithmActivity extends FragmentActivity {
 
-    private final String ALGORITHM_NAME_KEY = "ALGORITHM_NAME_KEY";
-    private final String STEP_ID_KEY = "STEP_ID_KEY";
+    private static final String ALGORITHM_NAME_KEY = "ALGORITHM_NAME_KEY";
+    private static final String STEP_ID_KEY = "STEP_ID_KEY";
     private static final String TEXT_TO_SPEECH_KEY = "TEXT_TO_SPEECH_KEY";
 
 
@@ -26,8 +26,8 @@ public class AlogrithmActivity extends FragmentActivity {
         Intent in = getIntent();
         Bundle bundleReceived = in.getExtras();
 
-        String algorithmName = bundleReceived != null ? bundleReceived.getString("ALGORITHM_NAME_KEY") : null;
-        String stepId = bundleReceived != null ? bundleReceived.getString("STEP_ID_KEY") : null;
+        String algorithmName = bundleReceived != null ? bundleReceived.getString(ALGORITHM_NAME_KEY) : null;
+        String stepId = bundleReceived != null ? bundleReceived.getString(STEP_ID_KEY) : null;
 
         Bundle bundle = new Bundle();
         bundle.putString(ALGORITHM_NAME_KEY, algorithmName);
