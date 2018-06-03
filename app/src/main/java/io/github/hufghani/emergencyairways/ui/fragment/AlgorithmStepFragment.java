@@ -98,7 +98,9 @@ public class AlgorithmStepFragment extends Fragment implements
             tts = new TextToSpeech(getActivity(), this);
         }
         setmSpeechRecognizerManager();
-
+        Toast.makeText(getActivity(),
+                "Say 'oh mighty computer' as the keyword for Speech Recognitions",
+                Toast.LENGTH_LONG).show();
 
     }
 
@@ -120,8 +122,7 @@ public class AlgorithmStepFragment extends Fragment implements
             is.close();
             String bufferString = new String(buffer, "UTF-8");
             Gson gson = new Gson();
-            algorithms = gson.fromJson(bufferString, new TypeToken<ArrayList<Algorithm>>() {
-            }.getType());
+            algorithms = gson.fromJson(bufferString, new TypeToken<ArrayList<Algorithm>>() {}.getType());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -337,12 +338,14 @@ public class AlgorithmStepFragment extends Fragment implements
 
 
             if (text.contains(YES) && yesTarget != null) {
+
                 ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, yesTarget, mute), true);
             } else if (text.contains(NO) && noTarget != null) {
                 ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, noTarget, mute), true);
+
             } else if (text.contains(CONTINUE) && continueTarget != null) {
                 ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, continueTarget, mute), true);
-                Toast.makeText(getActivity(), continueTarget, Toast.LENGTH_LONG).show();
+
             } else if (text.equalsIgnoreCase("back")) {
                 Objects.requireNonNull(getActivity()).onBackPressed();
             }
