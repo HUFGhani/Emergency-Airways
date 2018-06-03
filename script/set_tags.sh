@@ -6,8 +6,8 @@
    	if [ -z "$TRAVIS_TAG" ]; then
 	    echo -e "Starting to tag commit.\n"
 
-        ORIGIN_URL=`git config --get remote.origin.url`
-        ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GITHUB_TOKEN@github.com}
+	    git config --global user.email "travis@travis-ci.org"
+	    git config --global user.name "Travis"
 
         version=$(<script/versionTracker.txt)
         echo "$version"
@@ -25,7 +25,7 @@
 
 	    git add .
 	    git commit -m "update versionTracker.txt from ${pastVersion} to ${version} "
-	   git push --force --quiet "$ORIGIN_URL_WITH_CREDENTIALS" master > /dev/null 2>&1
+	    git push origin HEAD:master
 
 
 	    echo -e "Done magic with tags.\n"
