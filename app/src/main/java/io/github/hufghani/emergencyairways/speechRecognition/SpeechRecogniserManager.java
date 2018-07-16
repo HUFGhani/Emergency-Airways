@@ -81,7 +81,7 @@ public class SpeechRecogniserManager {
                     speechRecognizerSetup.setDictionary(new File(assetDir, "cmudict-en-us.dict"));
 
                     // Threshold to tune for keyphrase to balance between false positives and false negatives
-                    speechRecognizerSetup.setKeywordThreshold(1e-40f);
+                    speechRecognizerSetup.setKeywordThreshold(1e-45f);
 
                     //Creates a new SpeechRecognizer object based on previous set up.
                     mPocketSphinxRecognizer = speechRecognizerSetup.getRecognizer();
