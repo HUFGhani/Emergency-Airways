@@ -1,8 +1,6 @@
 package io.github.hufghani.emergencyairways.ui.fragment;
 
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-import android.speech.tts.UtteranceProgressListener;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -20,14 +18,10 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.jsoup.Jsoup;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 
 import io.github.hufghani.emergencyairways.R;
@@ -42,7 +36,7 @@ import io.github.hufghani.emergencyairways.utils.HtmlTagHandler;
  * A placeholder fragment containing a simple view.
  */
 public class AlgorithmStepFragment extends Fragment implements
-        TextToSpeech.OnInitListener, OnResultListener {
+         OnResultListener {
 
     private static final String ALGORITHM_NAME_KEY = "ALGORITHM_NAME_KEY";
     private static final String STEP_ID_KEY = "STEP_ID_KEY";
@@ -54,7 +48,7 @@ public class AlgorithmStepFragment extends Fragment implements
     private String algorithmName, stepId;
     private Button btnNo, btnYes, btnBack;
     private FloatingActionButton textToSpeach;
-    private TextToSpeech tts;
+
     private boolean mute = false;
     private String text = "";
     private String yesTarget,noTarget,continueTarget;
@@ -68,10 +62,6 @@ public class AlgorithmStepFragment extends Fragment implements
 
         algorithmStepFragment.setArguments(args);
         return algorithmStepFragment;
-    }
-
-    private static String html2text(String html) {
-        return Jsoup.parse(html).text();
     }
 
     @Override
@@ -94,10 +84,15 @@ public class AlgorithmStepFragment extends Fragment implements
         mute = args != null && args.getBoolean(TEXT_TO_SPEECH_KEY, false);
         loadAlgorithmsFromAssets();
         populateViews();
-        if (tts == null) {
-            tts = new TextToSpeech(getActivity(), this);
-        }
+
+        try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         setmSpeechRecognizerManager();
+
+
         Toast.makeText(getActivity(),
                 "Say 'oh mighty computer' as the keyword for Speech Recognitions",
                 Toast.LENGTH_LONG).show();
@@ -175,7 +170,7 @@ public class AlgorithmStepFragment extends Fragment implements
                         if (!algorithms.get(i).getSteps().get(j).getOptions().isEmpty()) {
                             for (Object o : algorithms.get(i).getSteps().get(j).getOptions()) {
                                 configureOptionButton((Option) o);
-                                speechButton((Option) o);
+
                             }
                         } else {
                             btnNo.setVisibility(View.INVISIBLE);
@@ -202,45 +197,37 @@ public class AlgorithmStepFragment extends Fragment implements
                 mute = !mute;
             }
             if (mute) {
-                tts.stop();
+
                 btnNo.setEnabled(true);
                 btnYes.setEnabled(true);
                 btnBack.setEnabled(true);
                 textToSpeach.setImageResource(android.R.drawable.ic_lock_silent_mode_off);
             } else {
                 textToSpeach.setImageResource(android.R.drawable.ic_lock_silent_mode);
-                speakOut();
             }
         });
 
     }
 
-    private void speechButton(final Option option) {
 
-        if (option.getCaption().equalsIgnoreCase(NO)){
-            noTarget = option.getTarget();
-        }else if (option.getCaption().equalsIgnoreCase(YES)){
-            yesTarget = option.getTarget();
-        }else if(option.getCaption().equalsIgnoreCase(CONTINUE)){
-            continueTarget = option.getTarget();
-        }
-    }
 
     private void configureOptionButton(final Option option) {
 
         View.OnClickListener onOptionClicked = v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, option.getTarget(), mute), true);
-
         if (option.getCaption().equalsIgnoreCase(NO)) {
             btnNo.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_red_curved));
             btnNo.setVisibility(View.VISIBLE);
             btnNo.setText(option.getCaption());
             btnNo.setOnClickListener(onOptionClicked);
+            noTarget = option.getTarget();
 
         } else if (option.getCaption().equalsIgnoreCase(YES)) {
             if (option.getCaption().equalsIgnoreCase(YES)) {
+                yesTarget = option.getTarget();
                 btnYes.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_green_curved));
             } else {
                 btnYes.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_blue_curved));
+                continueTarget = option.getTarget();
             }
             btnYes.setVisibility(View.VISIBLE);
             btnYes.setText(option.getCaption());
@@ -257,70 +244,6 @@ public class AlgorithmStepFragment extends Fragment implements
 
     }
 
-    @Override
-    public void onInit(int status) {
-        if (status == TextToSpeech.SUCCESS) {
-            tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
-
-                @Override
-                public void onStart(String utteranceId) {
-                    Objects.requireNonNull(getActivity()).runOnUiThread(() -> {
-                        btnNo.setEnabled(false);
-                        btnYes.setEnabled(false);
-                        btnBack.setEnabled(false);
-
-                    });
-                }
-
-                @Override
-                public void onDone(String utteranceId) {
-                    Objects.requireNonNull(getActivity()).runOnUiThread(() -> {
-                        btnNo.setEnabled(true);
-                        btnYes.setEnabled(true);
-                        btnBack.setEnabled(true);
-                    });
-                }
-
-                @Override
-                public void onError(String utteranceId) {
-
-                }
-            });
-
-            int result = tts.setLanguage(Locale.UK);
-
-            if (result == TextToSpeech.LANG_MISSING_DATA
-                    || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                Log.e("TTS", "This Language is not supported");
-            } else {
-                speakOut();
-
-            }
-
-        } else {
-            Log.e("TTS", "Initilization Failed!");
-        }
-    }
-
-    @Override
-    public void onDestroy() {
-        if (tts != null) {
-            tts.stop();
-            tts.shutdown();
-        }
-        super.onDestroy();
-    }
-
-    private void speakOut() {
-        if (mute) {
-            tts.stop();
-        } else {
-            HashMap<String, String> map = new HashMap<>();
-            map.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "UniqueID");
-            tts.speak(html2text(text), TextToSpeech.QUEUE_FLUSH, map);
-        }
-
-    }
 
 
     @Override
@@ -336,16 +259,15 @@ public class AlgorithmStepFragment extends Fragment implements
 
         Log.e("Speech", "" + text);
 
-
-            if (text.contains(YES) && yesTarget != null) {
-
-                ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, yesTarget, mute), true);
-            } else if (text.contains(NO) && noTarget != null) {
-                ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, noTarget, mute), true);
-
-            } else if (text.contains(CONTINUE) && continueTarget != null) {
-                ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, continueTarget, mute), true);
-
+            if (text.contains(YES)) {
+                btnYes.setPressed(true);
+                btnYes.performClick();
+            } else if (text.contains(NO) ) {
+                btnNo.setPressed(true);
+                btnNo.performClick();
+            } else if (text.contains(CONTINUE) ) {
+                btnNo.setPressed(true);
+                btnNo.performClick();
             } else if (text.equalsIgnoreCase("back")) {
                 Objects.requireNonNull(getActivity()).onBackPressed();
             }
@@ -357,5 +279,7 @@ public class AlgorithmStepFragment extends Fragment implements
         SpeechRecogniserManager mSpeechRecogniserManager = new SpeechRecogniserManager(getActivity());
         mSpeechRecogniserManager.setOnResultListner(this);
     }
+
+
 
 }
