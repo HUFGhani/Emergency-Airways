@@ -110,7 +110,7 @@ public class AlgorithmStepFragment extends Fragment implements
     private void loadAlgorithmsFromAssets() {
         algorithms = new ArrayList<>(2);
         try {
-            InputStream is = Objects.requireNonNull(getActivity()).getAssets().open("algorithms.json");
+            InputStream is = Objects.requireNonNull(getActivity()).getAssets().open("algorithms_Simplified.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             int read = is.read(buffer);

@@ -1,0 +1,386 @@
+[
+  {
+    "name": "Emergency tracheostomy management",
+    "entrypoint": "2-step-1",
+    "steps": [
+      {
+        "id": "2-step-1",
+        "title": "Patent upper airway",
+        "content": "<strong> Call for airway expert help Look, listen & feel <strong> at the mouth and tracheostomy Use <strong> waveform capnography <strong> if available",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-2"
+          }
+        ]
+      },
+      {
+        "id": "2-step-2",
+        "title": "Patent upper airway",
+        "content": null,
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-2-yes"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-2-no"
+          }
+        ]
+      },
+      {
+        "id": "2-step-2-no",
+        "title": "Patent upper airway",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life</strong>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-3"
+          }
+        ]
+      },
+      {
+        "id": "2-step-2-yes",
+        "title": "Patent upper airway",
+        "content": "Apply high flow oxygen to <strong> BOTH </strong> the face and the tracheostomy",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-3"
+          }
+        ]
+      },
+      {
+        "id": "2-step-3",
+        "title": "Assess tracheostomy patency",
+        "content": "Remove <strong> speaking valve </strong> or <strong> cap </strong> (if present) Remove inner tube Some inner tubes need re-inserting to connect to breathing circuits",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-4"
+          }
+        ]
+      },
+      {
+        "id": "2-step-4",
+        "title": "Assess tracheostomy patency",
+        "content": null,
+        "question": "Can you pass a suction catheter?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-4-final"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-5"
+          }
+        ]
+      },
+      {
+        "id": "2-step-4-final",
+        "title": "Assess tracheostomy patency",
+        "content": "The tracheostomy tube is patent Perform tracheal suction Consider partial obstruction Ventilate if not breathing Continue ABCDE assessment",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "2-step-5",
+        "title": "Assess tracheostomy patency",
+        "content": " Deflate the <strong> cuff </strong> (if present) <strong> Look, listen & feel at the mouth and tracheostomy <strong>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-6"
+          }
+        ]
+      },
+      {
+        "id": "2-step-6",
+        "title": "Assess tracheostomy patency",
+        "content": null,
+        "question": "Is the patient stable or improving?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-6-final"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-7"
+          }
+        ]
+      },
+      {
+        "id": "2-step-6-final",
+        "title": "Assess tracheostomy patency",
+        "content": "Tracheostomy tube partially obstructed or displaced Senior review and plan Continue ABCDE",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "2-step-7",
+        "title": "Assess tracheostomy patency",
+        "content": "<strong>REMOVE THE TRACHEOSTOMY TUBE Look, listen & feel at the mouth and tracheostomy<strong>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-8"
+          }
+        ]
+      },
+      {
+        "id": "2-step-8",
+        "title": "Assess tracheostomy patency",
+        "content": null,
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "2-step-8-final"
+          },
+          {
+            "caption": "No",
+            "target": "2-step-9"
+          }
+        ]
+      },
+      {
+        "id": "2-step-8-final",
+        "title": "Assess tracheostomy patency",
+        "content": "Re-apply oxygen Continue ABCDE",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "2-step-9",
+        "title": "Assess tracheostomy patency",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life</strong>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-10"
+          }
+        ]
+      },
+      {
+        "id": "2-step-10",
+        "title": "Primary emergency oxygenation",
+        "content": "Standard <b>ORAL airway</b> manoeuvres<p/>Cover the stoma (swabs/hand). Use:<ul><li>Tracheostomy STOMA ventilation</li><li>Paediatric face-mask</li> <li>Supraglottic Airway</li></ul>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "2-step-10a"
+          }
+        ]
+      },
+      {
+        "id": "2-step-10a",
+        "title": "Secondary emergency oxygenation",
+        "content": "Attempt <b>ORAL intubation</b><br/><b>Prepare for difficult intubation</b><p/>Uncut tube, advanced beyond stoma</p>Attempt <b>intubation of STOMA</b><p/>6.0mm tracheostomy or tracheal tube<p> Consider: Bronchoscope / Aintree catheter <p> Bougie / Airway Exchange Catheter",
+        "question": null,
+        "options": []
+      }
+    ]
+  },
+  {
+    "name": "Emergency laryngectomy management",
+    "entrypoint": "1-step-1",
+    "steps": [
+      {
+        "id": "1-step-1",
+        "content": "<strong>Call for airway expert help Look, listen & feel at the mouth and laryngectomy stoma</strong> Laryngectomy patients have no airflow via the mouth Use <strong> waveform capnography</strong> if available",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-2"
+          }
+        ]
+      },
+      {
+        "id": "1-step-2",
+        "content": null,
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-2-yes"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-2-no"
+          }
+        ]
+      },
+      {
+        "id": "1-step-2-yes",
+        "content": "<strong>Apply high flow oxygen to laryngectomy stoma</strong><p/>If any doubt whether a patient has a laryngectomy, apply oxygen to face also Laryngectomy patients have an end stoma and cannot be oxygenated via the mouth or nose. Applying oxygen to the face and stoma is the default emergency action for all patients with a tracheostomy",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-3"
+          }
+        ]
+      },
+      {
+        "id": "1-step-2-no",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life<strong>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-3"
+          }
+        ]
+      },
+      {
+        "id": "1-step-3",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "Most laryngectomy stomas will <strong>NOT</strong> have a tube in situ<p/>Remove <strong>stoma cover</strong> (if present)<p/>Remove <strong>inner tube</strong> (if persent)<p/>Some inner tubes need re-inserting to connect to breathing circuits.  Do not remove a tracheoesophageal puncture (TEP) prosthesis<p/>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-4"
+          }
+        ]
+      },
+      {
+        "id": "1-step-4",
+        "title": "Assess laryngectomy stoma patency",
+        "content": null,
+        "question": "Can you pass a suction catheter?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-4-final"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-5"
+          }
+        ]
+      },
+      {
+        "id": "1-step-4-final",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "<strong>The laryngectomy stoma is patent</strong> Perform tracheal suction Consider partial obstruction Ventilate via stoma if not breathing Continue ABCDE",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "1-step-5",
+        "title": "Assess laryngectomy stoma patency",
+        "content": " Deflate the <strong>cuff</strong> (if present) <strong>Look, listen & feel at the laryngectomy stoma or tube</strong>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-6"
+          }
+        ]
+      },
+      {
+        "id": "1-step-6",
+        "title": "Assess laryngectomy stoma patency",
+        "content": null,
+        "question": "Is the patient stable or improving?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-6-final"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-7"
+          }
+        ]
+      },
+      {
+        "id": "1-step-6-final",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "Senior review and plan Continue ABCDE",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "1-step-7",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "<strong>REMOVE THE TUBE FROM THE LARYNGECTOMY STOMA if present</strong><p/><b>Look, listen & feel at the laryngectomy stoma.</b>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-8"
+          }
+        ]
+      },
+      {
+        "id": "1-step-8",
+        "title": "Assess laryngectomy stoma patency",
+        "content": null,
+        "question": "Is the patient breathing?",
+        "options": [
+          {
+            "caption": "Yes",
+            "target": "1-step-8-final"
+          },
+          {
+            "caption": "No",
+            "target": "1-step-9"
+          }
+        ]
+      },
+      {
+        "id": "1-step-8-final",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "Re-apply oxygen Continue ABCDE",
+        "question": null,
+        "options": []
+      },
+      {
+        "id": "1-step-9",
+        "title": "Assess laryngectomy stoma patency",
+        "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-10"
+          }
+        ]
+      },
+      {
+        "id": "1-step-10",
+        "title": "Primary emergency oxygenation",
+        "content": "Laryngectomy stoma ventilation:<p/><ul><li>Paediatric face-mask</li><li>Supraglottic Airway</li></ul>",
+        "question": null,
+        "options": [
+          {
+            "caption": "Continue",
+            "target": "1-step-10a"
+          }
+        ]
+      },
+      {
+        "id": "1-step-10a",
+        "title": "Secondary emergency oxygenation",
+        "content": "Attempt <b>intubation of laryngectomy stoma</b><p/>6.0mm tracheostomy or tracheal tube Consider: Bronchoscope / Aintree catheter Bougie / Airway Exchange Catheter",
+        "question": null,
+        "options": []
+      }
+    ]
+  }
+]
