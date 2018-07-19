@@ -8,6 +8,7 @@
         "title": "Patent upper airway",
         "content": "<strong> Call for airway expert help Look, listen & feel <strong> at the mouth and tracheostomy Use <strong> waveform capnography <strong> if available",
         "question": null,
+        "recording":"t2step1",
         "options": [
           {
             "caption": "Continue",
@@ -20,6 +21,7 @@
         "title": "Patent upper airway",
         "content": null,
         "question": "Is the patient breathing?",
+        "recording":"t2step2",
         "options": [
           {
             "caption": "Yes",
@@ -36,6 +38,7 @@
         "title": "Patent upper airway",
         "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life</strong>",
         "question": null,
+        "recording":"t2step2no",
         "options": [
           {
             "caption": "Continue",
@@ -48,10 +51,11 @@
         "title": "Patent upper airway",
         "content": "Apply high flow oxygen to <strong> BOTH </strong> the face and the tracheostomy",
         "question": null,
+        "recording":"t2step2yes",
         "options": [
           {
             "caption": "Continue",
-            "target": "2-step-3"
+            "target": "2step3"
           }
         ]
       },
@@ -60,6 +64,7 @@
         "title": "Assess tracheostomy patency",
         "content": "Remove <strong> speaking valve </strong> or <strong> cap </strong> (if present) Remove inner tube Some inner tubes need re-inserting to connect to breathing circuits",
         "question": null,
+        "recording":"t2step3",
         "options": [
           {
             "caption": "Continue",
@@ -72,10 +77,11 @@
         "title": "Assess tracheostomy patency",
         "content": null,
         "question": "Can you pass a suction catheter?",
+        "recording":"t2step4",
         "options": [
           {
             "caption": "Yes",
-            "target": "2-step-4-final"
+            "target": "2step4final"
           },
           {
             "caption": "No",
@@ -88,6 +94,7 @@
         "title": "Assess tracheostomy patency",
         "content": "The tracheostomy tube is patent Perform tracheal suction Consider partial obstruction Ventilate if not breathing Continue ABCDE assessment",
         "question": null,
+        "recording":"t2step4final",
         "options": []
       },
       {
@@ -95,6 +102,7 @@
         "title": "Assess tracheostomy patency",
         "content": " Deflate the <strong> cuff </strong> (if present) <strong> Look, listen & feel at the mouth and tracheostomy <strong>",
         "question": null,
+        "recording":"t2step5",
         "options": [
           {
             "caption": "Continue",
@@ -107,6 +115,7 @@
         "title": "Assess tracheostomy patency",
         "content": null,
         "question": "Is the patient stable or improving?",
+        "recording":"t2step6",
         "options": [
           {
             "caption": "Yes",
@@ -123,6 +132,7 @@
         "title": "Assess tracheostomy patency",
         "content": "Tracheostomy tube partially obstructed or displaced Senior review and plan Continue ABCDE",
         "question": null,
+        "recording":"t2step6final",
         "options": []
       },
       {
@@ -130,6 +140,7 @@
         "title": "Assess tracheostomy patency",
         "content": "<strong>REMOVE THE TRACHEOSTOMY TUBE Look, listen & feel at the mouth and tracheostomy<strong>",
         "question": null,
+        "recording":"t2step7",
         "options": [
           {
             "caption": "Continue",
@@ -142,6 +153,7 @@
         "title": "Assess tracheostomy patency",
         "content": null,
         "question": "Is the patient breathing?",
+        "recording":"t2step8",
         "options": [
           {
             "caption": "Yes",
@@ -158,6 +170,7 @@
         "title": "Assess tracheostomy patency",
         "content": "Re-apply oxygen Continue ABCDE",
         "question": null,
+        "recording":"t2step8final",
         "options": []
       },
       {
@@ -165,6 +178,7 @@
         "title": "Assess tracheostomy patency",
         "content": "Call Resuscitation Team<p/><strong>CPR if no pulse/signs of life</strong>",
         "question": null,
+        "recording":"t2step9",
         "options": [
           {
             "caption": "Continue",
@@ -177,6 +191,7 @@
         "title": "Primary emergency oxygenation",
         "content": "Standard <b>ORAL airway</b> manoeuvres<p/>Cover the stoma (swabs/hand). Use:<ul><li>Tracheostomy STOMA ventilation</li><li>Paediatric face-mask</li> <li>Supraglottic Airway</li></ul>",
         "question": null,
+        "recording":"t2step10",
         "options": [
           {
             "caption": "Continue",
@@ -189,6 +204,7 @@
         "title": "Secondary emergency oxygenation",
         "content": "Attempt <b>ORAL intubation</b><br/><b>Prepare for difficult intubation</b><p/>Uncut tube, advanced beyond stoma</p>Attempt <b>intubation of STOMA</b><p/>6.0mm tracheostomy or tracheal tube<p> Consider: Bronchoscope / Aintree catheter <p> Bougie / Airway Exchange Catheter",
         "question": null,
+        "recording":"t2step10a",
         "options": []
       }
     ]

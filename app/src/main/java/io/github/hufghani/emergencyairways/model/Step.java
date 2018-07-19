@@ -25,6 +25,9 @@ public class Step implements Serializable
     @SerializedName("question")
     @Expose
     private Object question;
+    @SerializedName("recording")
+    @Expose
+    private String recording;
     @SerializedName("options")
     @Expose
     private List<Option> options = null;
@@ -45,13 +48,14 @@ public class Step implements Serializable
      * @param question
      * @param options
      */
-    public Step(String id, String title, String content, Object question, List<Option> options) {
+    public Step(String id, String title, String content, Object question, String recording,List<Option> options) {
         super();
         this.id = id;
         this.title = title;
         this.content = content;
         this.question = question;
         this.options = options;
+        this.recording =recording;
     }
 
     public String getId() {
@@ -94,9 +98,16 @@ public class Step implements Serializable
         this.options = options;
     }
 
+    public String getRecording() {
+        return recording;
+    }
+
+    public void setRecording(String recording) {
+        this.recording = recording;
+    }
 
     @Override
     public String toString() {
-        return new StringBuilder().append("Step{").append("id='").append(id).append('\'').append(", title='").append(title).append('\'').append(", content='").append(content).append('\'').append(", question=").append(question).append(", options=").append(options).append('}').toString();
+        return new StringBuilder().append("Step{").append("id='").append(id).append('\'').append(", title='").append(title).append('\'').append(", content='").append(content).append('\'').append(", question=").append(question).append(", recording").append(recording).append('\'').append(", options=").append(options).append('}').toString();
     }
 }

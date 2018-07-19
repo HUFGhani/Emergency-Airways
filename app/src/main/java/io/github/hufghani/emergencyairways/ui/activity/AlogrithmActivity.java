@@ -72,4 +72,9 @@ public class AlogrithmActivity extends FragmentActivity {
         super.onBackPressed();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }
