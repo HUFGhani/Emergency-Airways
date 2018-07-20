@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import io.github.hufghani.emergencyairways.utils.MediaPlayerSingleton;
 import io.github.hufghani.emergencyairways.R;
 import io.github.hufghani.emergencyairways.model.Algorithm;
 import io.github.hufghani.emergencyairways.model.Option;
@@ -33,6 +32,7 @@ import io.github.hufghani.emergencyairways.speechRecognition.OnResultListener;
 import io.github.hufghani.emergencyairways.speechRecognition.SpeechRecogniserManager;
 import io.github.hufghani.emergencyairways.ui.activity.AlogrithmActivity;
 import io.github.hufghani.emergencyairways.utils.HtmlTagHandler;
+import io.github.hufghani.emergencyairways.utils.MediaPlayerSingleton;
 
 
 public class AlgorithmStepFragment extends Fragment implements
@@ -45,13 +45,12 @@ public class AlgorithmStepFragment extends Fragment implements
     private static final String NO = "no";
     private static final String CONTINUE = "continue";
     List<Algorithm> algorithms;
-    private String algorithmName, stepId;
+    private static String algorithmName, stepId;
     private Button btnNo, btnYes, btnBack;
     private FloatingActionButton textToSpeach;
 
     private boolean mute = false;
-    private String text = "";
-    private String yesTarget,noTarget,continueTarget;
+    static String yesTarget,noTarget,continueTarget;
 
     private static MediaPlayer mPlayer;
 
@@ -190,8 +189,6 @@ public class AlgorithmStepFragment extends Fragment implements
                 }
             }
         }
-
-        text = sb.toString();
         btnBack.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_blue_curved));
         btnBack.setOnClickListener(v -> Objects.requireNonNull(getActivity()).onBackPressed());
 
@@ -225,36 +222,27 @@ public class AlgorithmStepFragment extends Fragment implements
 
     private void configureOptionButton(final Option option) {
 
-        View.OnClickListener onOptionClicked = v -> {
-            ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, option.getTarget(), mute), true);
-            onPause();
-        };
         if (option.getCaption().equalsIgnoreCase(NO)) {
             btnNo.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_red_curved));
             btnNo.setVisibility(View.VISIBLE);
             btnNo.setText(option.getCaption());
-            btnNo.setOnClickListener(onOptionClicked);
+            btnNo.setOnClickListener(v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, option.getTarget(), mute), true));
             noTarget = option.getTarget();
 
         } else if (option.getCaption().equalsIgnoreCase(YES)) {
-            if (option.getCaption().equalsIgnoreCase(YES)) {
-                yesTarget = option.getTarget();
-                btnYes.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_green_curved));
-            } else {
-                btnYes.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_blue_curved));
-                continueTarget = option.getTarget();
-            }
+            btnYes.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_green_curved));
             btnYes.setVisibility(View.VISIBLE);
             btnYes.setText(option.getCaption());
-            btnYes.setOnClickListener(onOptionClicked);
+            btnYes.setOnClickListener(v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, option.getTarget(), mute), true));
+            yesTarget = option.getTarget();
 
         } else {
             btnYes.setVisibility(View.INVISIBLE);
             btnNo.setVisibility(View.VISIBLE);
             btnNo.setBackgroundDrawable(Objects.requireNonNull(getActivity()).getResources().getDrawable(R.drawable.ripple_button_green_curved));
             btnNo.setText(option.getCaption());
-            btnNo.setOnClickListener(onOptionClicked);
-
+            btnNo.setOnClickListener(v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, option.getTarget(), mute), true));
+            continueTarget = option.getTarget();
         }
 
 
@@ -264,33 +252,31 @@ public class AlgorithmStepFragment extends Fragment implements
 
 
     @Override
-    public void OnResult(ArrayList<String> commands) {
-        StringBuilder text = new StringBuilder("");
-        for (String command : commands) {
-            text.append(command).append(" ");
-        }
-        recognition(text.toString());
+    public void OnResult(String commands) {
+        recognition(commands.toString());
     }
 
-    private void recognition(String text) {
+    public void recognition(String text) {
 
         Log.e("Speech", "" + text);
 
             if (text.contains(YES)) {
-                btnYes.setPressed(true);
-                btnYes.performClick();
+                btnNo.setOnClickListener(v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, yesTarget, mute), true));
+                btnNo.performClick();
             } else if (text.contains(NO) ) {
-                btnNo.setPressed(true);
+                btnNo.setOnClickListener(v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, noTarget, mute), true));
                 btnNo.performClick();
             } else if (text.contains(CONTINUE) ) {
-                btnNo.setPressed(true);
+                Log.d("continueTarget",continueTarget);
+                btnNo.setOnClickListener(v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, continueTarget, mute), true));
                 btnNo.performClick();
-            } else if (text.equalsIgnoreCase("back")) {
+            } else if (text.contains("back")) {
                 Objects.requireNonNull(getActivity()).onBackPressed();
             }
 
 
     }
+
 
     private void setmSpeechRecognizerManager() {
         SpeechRecogniserManager mSpeechRecogniserManager = new SpeechRecogniserManager(getActivity());
