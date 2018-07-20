@@ -1,10 +1,14 @@
 package io.github.hufghani.emergencyairways.ui.fragment;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -53,6 +57,7 @@ public class AlgorithmStepFragment extends Fragment implements
     static String yesTarget,noTarget,continueTarget;
 
     private static MediaPlayer mPlayer;
+    private static final int PERMISSIONS_REQUEST_RECORD_AUDIO = 1;
 
     public static Fragment newInstance(String algorithmName, String stepId, Boolean textToSpeach) {
         Bundle args = new Bundle();
@@ -92,6 +97,12 @@ public class AlgorithmStepFragment extends Fragment implements
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+        int permissionCheck = ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.RECORD_AUDIO);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.RECORD_AUDIO}, PERMISSIONS_REQUEST_RECORD_AUDIO);
+            return;
+        }
         setmSpeechRecognizerManager();
 
 
@@ -248,12 +259,14 @@ public class AlgorithmStepFragment extends Fragment implements
 
 
     }
-
-
-
+    
     @Override
-    public void OnResult(String commands) {
-        recognition(commands.toString());
+    public void OnResult(ArrayList<String> commands) {
+        StringBuilder text = new StringBuilder("");
+        for (String command : commands) {
+            text.append(command).append(" ");
+        }
+        recognition(text.toString());
     }
 
     public void recognition(String text) {
