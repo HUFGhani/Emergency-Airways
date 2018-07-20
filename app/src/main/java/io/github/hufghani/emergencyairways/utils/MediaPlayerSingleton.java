@@ -15,7 +15,6 @@ public class MediaPlayerSingleton extends Application {
 
         }
 
-
         return instance;
     }
 
