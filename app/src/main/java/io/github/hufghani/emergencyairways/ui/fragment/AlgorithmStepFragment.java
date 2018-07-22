@@ -106,9 +106,11 @@ public class AlgorithmStepFragment extends Fragment implements
         setmSpeechRecognizerManager();
 
 
-        Toast.makeText(getActivity(),
-                "Say 'oh mighty computer' as the keyword for Speech Recognitions",
-                Toast.LENGTH_LONG).show();
+
+
+            Toast.makeText(getActivity(),
+                    "Say 'oh mighty computer' as the keyword for Speech Recognitions",
+                    Toast.LENGTH_LONG).show();
 
         playingRecording();
 
