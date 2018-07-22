@@ -44,19 +44,19 @@
                 <TextView
                     android:id="@+id/stepTitle"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text=""
                     android:textColor="?android:attr/detailsElementBackground" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="69dp" />
+                    android:layout_height="29dp" />
 
                 <TextView
                     android:id="@+id/stepContent"
                     android:layout_width="match_parent"
-                    android:layout_height="57dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text=""
                     android:textColor="?android:attr/detailsElementBackground" />
@@ -74,7 +74,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
             android:background="#7f2f33c1" />
 
         <LinearLayout
