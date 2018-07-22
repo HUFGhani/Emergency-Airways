@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".ui.fragment.AlgorithmStepFragment"
     tools:layout_editor_absoluteY="81dp"
     tools:showIn="@layout/activity_alogrithm">
@@ -12,14 +13,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#7f2f33c1"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/algorithmTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:fadingEdge="none|horizontal"
             android:gravity="center"
-            android:text="" />
+            android:text=""
+            android:textColor="?android:attr/detailsElementBackground" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -32,19 +37,29 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp" />
+
                 <TextView
                     android:id="@+id/stepTitle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="58dp"
                     android:gravity="center"
-                    android:text="" />
+                    android:text=""
+                    android:textColor="?android:attr/detailsElementBackground" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="69dp" />
 
                 <TextView
                     android:id="@+id/stepContent"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="57dp"
                     android:gravity="center"
-                    android:text="" />
+                    android:text=""
+                    android:textColor="?android:attr/detailsElementBackground" />
 
             </LinearLayout>
         </ScrollView>
@@ -52,19 +67,25 @@
         <TextView
             android:id="@+id/stepQuestion"
             android:layout_width="match_parent"
-            android:layout_height="144dp"
+            android:layout_height="69dp"
             android:gravity="center"
-            android:text="" />
+            android:text=""
+            android:textColor="?android:attr/detailsElementBackground" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:background="#7f2f33c1" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="79dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnBack"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="79dp"
                 android:layout_weight="1"
                 android:enabled="false"
                 android:text="@string/back"
@@ -73,7 +94,7 @@
             <Button
                 android:id="@+id/btnNo"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:enabled="false"
                 android:text="@string/no"
@@ -82,7 +103,7 @@
             <Button
                 android:id="@+id/btnYes"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="79dp"
                 android:layout_weight="1"
                 android:enabled="false"
                 android:text="@string/yes"
@@ -92,20 +113,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="70" />
-
+                android:layout_width="261dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:background="#7f2f33c1" />
 
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/textToSpeach"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="235dp"
+                android:layout_height="80dp"
                 android:layout_gravity="bottom|right"
                 android:layout_weight="1"
                 android:clickable="true"

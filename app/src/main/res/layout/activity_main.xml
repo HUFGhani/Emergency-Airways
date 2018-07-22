@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <data />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
 
         <Button
             android:id="@+id/btntracheostomy_algorithm"
-            android:layout_width="wrap_content"
+            android:layout_width="318dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="156dp"
-            android:text="@string/tracheostomy_algorithm" />
+            android:background="?attr/colorAccent"
+            android:text="@string/tracheostomy_algorithm"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnlaryngectomy_algorithm"
-            android:layout_width="wrap_content"
+            android:layout_width="318dp"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/btntracheostomy_algorithm"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/btntracheostomy_algorithm"
             android:layout_marginBottom="106dp"
-            android:text="@string/laryngectomy_algorithm" />
+            android:background="?attr/colorAccent"
+            android:text="@string/laryngectomy_algorithm"
+            android:textColor="@android:color/white" />
 
     </RelativeLayout>
 </layout>
