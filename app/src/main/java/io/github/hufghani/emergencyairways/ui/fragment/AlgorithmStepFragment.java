@@ -321,13 +321,18 @@ public class AlgorithmStepFragment extends Fragment implements
                     btnNo.setEnabled(true);
                     btnYes.setEnabled(true);
                     btnBack.setEnabled(true);
+
+                    if (stepId.equals("2-step-1") || stepId.equals("1-step-1")){
+                        btnNo.setOnClickListener(v -> ((AlogrithmActivity) Objects.requireNonNull(AlgorithmStepFragment.this.getActivity())).replaceFragment(AlgorithmStepFragment.newInstance(algorithmName, continueTarget, mute), true));
+                        btnNo.performClick();
+                    }
                 }));
             }
+
+
         }catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void stopPlayingRecording(){
